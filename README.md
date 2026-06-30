@@ -33,8 +33,8 @@ O PRMD utiliza mensagens textuais estritas com codificação UTF-8, estruturadas
 
 ### Eventos e mecanismo de resiliência 
 O maior diferencial do protocolo PRMD é o tratamento de falhas em conexões intermitentes, comum em regiões isoladas ou polos escolares com oscilação geográfica de sinal:
-* **Evento de Queda de Conexão:** Ao registar uma demanda sem internet, o cliente interceta a falha de rede silenciosamente e aciona a rotina offline, gravando o payload localmente num ficheiro JSON.
-* **O Acordo de Confiança:** O cliente **nunca** apaga os relatórios locais imediatamente após o envio. O evento de limpeza do buffer só ocorre no exato milissegundo em que o cliente recebe a resposta `'201_DATA_ACK'` da central, blindando o sistema contra perda de dados ou apagões de energia no meio da transmissão.
+* **Evento de queda de conexão:** Ao registar uma demanda sem internet, o cliente interceta a falha de rede silenciosamente e aciona a rotina offline, gravando o payload localmente num ficheiro JSON.
+* **O acordo de confiança:** O cliente **nunca** apaga os relatórios locais imediatamente após o envio. O evento de limpeza do buffer só ocorre no exato milissegundo em que o cliente recebe a resposta `'201_DATA_ACK'` da central, blindando o sistema contra perda de dados ou apagões de energia no meio da transmissão.
 
 ---
 
@@ -45,18 +45,18 @@ O SIMD substitui o fluxo de mensagens de texto soltas por um formulário visual 
 
 ### Por que foi utilizado o TCP nessa aplicação?
 A camada de transporte utiliza obrigatoriamente **Sockets TCP** (`socket.SOCK_STREAM`). A justificativa arquitetural baseia-se na criticidade dos dados de governança pública. Enquanto o protocolo UDP prioriza a velocidade e tolera a perda de pacotes (como em transmissões de vídeo), o TCP garante:
-1. **Entrega Confiável:** Certeza absoluta de que cada caractere do relatório chegará ao destino através de retransmissões automáticas ao nível de transporte.
-2. **Controlo de Ordenação:** Garante que os pacotes de dados não cheguem invertidos ou corrompidos, invalidando o formato JSON da Camada de Aplicação.
+1. **Entrega confiável:** Certeza absoluta de que cada caractere do relatório chegará ao destino através de retransmissões automáticas ao nível de transporte.
+2. **Controle de ordenação:** Garante que os pacotes de dados não cheguem invertidos ou corrompidos, invalidando o formato JSON da Camada de Aplicação.
 
 ### Requisitos mínimos de funcionamento
-* **Sistema Operativo:** Linux (Ubuntu/WSL) ou Windows com suporte a Python 3.
-* **Dependências Nativas:** Biblioteca `socket`, `json`, `csv`, `os` e `tkinter`.
-* **Ambiente Linux (WSL):** Necessário instalar o suporte gráfico do Tkinter executando o comando:
+* **Sistema operacional:** Linux (Ubuntu/WSL) ou Windows com suporte a Python 3.
+* **Dependências nativas:** Biblioteca `socket`, `json`, `csv`, `os` e `tkinter`.
+* **Ambiente Linux (Ubuntu/WSL):** Necessário instalar o suporte gráfico do Tkinter executando o comando:
   ```bash
   sudo apt update && sudo apt install python3-tk
 
 
-### Como executar a aplicação:
+### Como executar a aplicação em Ambiente Linux (Ubuntu/WSL) ou macOS:
 1. Abra dois terminais divididos. No primeiro, inicie o receptor de dados executando o comando:
 ```bash```
 python3 servidor.py
@@ -64,3 +64,13 @@ python3 servidor.py
 2. No segundo terminal, execute a interface visual do usuário:
 ```bash```
 python3 cliente.py
+
+
+### Como executar a aplicação em Ambiente Windows:
+1. Abra dois terminais divididos. No primeiro, inicie o receptor de dados executando o comando:
+```bash```
+python servidor.py
+
+2. No segundo terminal, execute a interface visual do usuário:
+```bash```
+python cliente.py
