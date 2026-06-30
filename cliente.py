@@ -9,7 +9,7 @@ import os
 # ---------------------------------------------
 HOST = 'localhost'
 PORT = 5000
-SENHA_ACESSO = 'nte_admin'
+SENHA_ACESSO = 'nucleo_admin'
 ARQUIVO_BUFFER = 'buffer_pendentes.json'
 
 def salvar_no_buffer(dados):
