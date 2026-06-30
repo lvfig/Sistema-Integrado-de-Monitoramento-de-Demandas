@@ -8,7 +8,7 @@ import os
 # ---------------------------------------------
 HOST = 'localhost'
 PORT = 5000
-SENHA_ACESSO = 'nte05_admin'
+SENHA_ACESSO = 'nucleo_admin'
 ARQUIVO_CSV = 'dados_consolidados.csv'
 
 def iniciar_servidor():
@@ -18,7 +18,7 @@ def iniciar_servidor():
     servidor.listen(5)
     
     print('==================================================')
-    print('  SERVIDOR CENTRAL (NTE 05) - LIGADO E ESCUTANDO  ')
+    print('  SERVIDOR CENTRAL - LIGADO E ESCUTANDO  ')
     print('==================================================')
 
     # Cria o cabeçalho do arquivo Planilha/CSV se ele ainda não existir
