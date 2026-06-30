@@ -61,6 +61,6 @@ A camada de transporte utiliza obrigatoriamente **Sockets TCP** (`socket.SOCK_ST
 ```bash
 python3 servidor.py
 
-1. No segundo terminal, execute a interface visual do usuário:
+2. No segundo terminal, execute a interface visual do usuário:
 ```bash
 python3 cliente.py
