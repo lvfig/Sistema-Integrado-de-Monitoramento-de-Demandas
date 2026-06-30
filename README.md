@@ -60,9 +60,7 @@ A camada de transporte utiliza obrigatoriamente **Sockets TCP** (`socket.SOCK_ST
 1. Abra dois terminais divididos. No primeiro, inicie o receptor de dados executando o comando:
 ```bash
 python3 servidor.py
-
----
-
+###
 2. No segundo terminal, execute a interface visual do usuário:
 ```bash
 python3 cliente.py
