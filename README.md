@@ -1,4 +1,4 @@
-Trabalho desenvolvido para a disciplina de Redes de Computadores I, ministrada pelo professor Jorge Lima de Oliveira Filho.
+Trabalho desenvolvido pela discente Lavínia Souza C. de Figueiredo para a disciplina de Redes de Computadores I, ministrada pelo professor Jorge Lima de Oliveira Filho.
 
 # Sistema Integrado de Monitoramento de Demandas
 
